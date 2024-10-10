@@ -170,4 +170,5 @@ def FSA_loss(img_features, txt_features, labels, logit_scale = 55):
     logits_sum = logits_exp.sum(dim=1, keepdim=True)# 分母：计算每个样本的logits的softmax
     pos_loss = -torch.log(pos_sim_exp / logits_sum.clamp(min=1e-8))
     loss = pos_loss.mean()
+
     return loss 
