@@ -10,9 +10,9 @@ scikit-learn==1.2.0
 pillow==10.3.0    
 
 ## 1. Datasets
-[RSTPReid](https://ieeexplore.ieee.org/document/8100034/?arnumber=8100034)\
-[CUHK-PEDES](http://arxiv.org/abs/2109.05534) \
-[ICFG-PEDES](http://arxiv.org/abs/2107.12666) \
+[RSTPReid](https://github.com/NjtechCVLab/RSTPReid-Dataset)\
+[CUHK-PEDES](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description) \
+[ICFG-PEDES](https://github.com/zifyloo/SSAN) \
 [Flickr30K](https://ieeexplore.ieee.org/document/7298932/?arnumber=7298932) \
 [MSCOCO](http://link.springer.com/10.1007/978-3-319-10602-1_48)    
 
