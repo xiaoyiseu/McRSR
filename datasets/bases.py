@@ -56,42 +56,6 @@ def tokenize(caption: str, tokenizer, text_length=77, truncate=True) -> torch.Lo
     result[:len(tokens)] = torch.tensor(tokens)
     return result
 
-#对字典格式的数据集进行转换，基于原始字典改变键-值，创建新的字典
-# train_set = ImageTextMLMDataset(dataset.train, train_transforms, text_length=args.text_length)
-class ImageTextDataset(Dataset):
-    def __init__(self,
-                 dataset,
-                 transform=None,
-                 text_length: int = 77,
-                 truncate: bool = True):
-        self.dataset = dataset
-        self.transform = transform
-        self.text_length = text_length
-        self.truncate = truncate
-        self.tokenizer = SimpleTokenizer()
-
-    def __len__(self):
-        return len(self.dataset)
-    
-    #__getitem__可以通过类似字典的映射获取来触发，也就是xx['']这种形式
-    # 实现了__getitem__这个方法后，可以把类当做字典
-    def __getitem__(self, index):
-        pid, image_id, img_path, caption = self.dataset[index]
-        img = read_image(img_path)
-        if self.transform is not None:
-            img = self.transform(img)
-
-        tokens = tokenize(caption, tokenizer=self.tokenizer, text_length=self.text_length, truncate=self.truncate)
-
-        ret = {
-            'pids': pid,
-            'image_ids': image_id,
-            'images': img,
-            'caption_ids': tokens,
-        }
-        return ret
-
-
 class ImageDataset(Dataset):
     def __init__(self, image_pids, img_paths, transform=None):
         self.image_pids = image_pids
@@ -132,26 +96,12 @@ class TextDataset(Dataset):
         return pid, caption
 
 
-'''
-{
-    "id": 0, 
-    "img_path": "0000_c14_0031.jpg",
-    "captions": ["The man is wearing a grey jacket and a blue shirt.
-                  His trousers are black and his shoes are brown.He is walking.", 
-                 "The man is a strong man who is in a grey jacket.
-                  His shirt is blue and his trousers is black."], 
-    "split": "train"
-}
-'''
-# train_set = ImageTextMLMDataset(dataset.train, train_transforms, text_length=args.text_length)
-# train_transforms表示build_transforms处理后的图像数据
-# dataset.train中包含的数据格式为字典
-class ImageTextMLMDataset(Dataset):
+class ImageTextDataset(Dataset):
     def __init__(self,
                  dataset,
                  transform=None,
                  text_length: int = 77,
-                 truncate: bool = True):#truncate-截断：是否截断文本描述以适应 text_length，默认为 True
+                 truncate: bool = True):
         self.dataset = dataset
         self.transform = transform
         self.text_length = text_length
@@ -159,19 +109,19 @@ class ImageTextMLMDataset(Dataset):
 
         self.tokenizer = SimpleTokenizer()
 
-    def __len__(self):#计算数据量，等同于len()
+    def __len__(self):
         return len(self.dataset)
 
     def __getitem__(self, index):
-        pid, image_id, img_path, caption = self.dataset[index]# 从数据集中获取对应索引的数据
+        pid, image_id, img_path, caption = self.dataset[index]
         img = read_image(img_path)
         if self.transform is not None:
             img = self.transform(img)
         
-        # 将字幕进行分词处理
-        caption_tokens = tokenize(caption, tokenizer=self.tokenizer, text_length=self.text_length, truncate=self.truncate)
-        
-        # 创建掩码语言模型（MLM）任务的随机掩码和标签
+        caption_tokens = tokenize(caption, 
+                                  tokenizer=self.tokenizer, 
+                                  text_length=self.text_length, 
+                                  truncate=self.truncate)
         mlm_tokens, mlm_labels = self._build_random_masked_tokens_and_labels(caption_tokens.cpu().numpy())
 
         ret = {
