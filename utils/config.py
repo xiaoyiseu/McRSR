@@ -53,8 +53,8 @@ def get_args():
                         help="[CUHK-PEDES, ICFG-PEDES, RSTPReid, Flickr_30k, MSCOCO]")
     parser.add_argument("--num_instance", type=int, default=4)
     parser.add_argument("--root_dir", default= r"F:\DataSet\CrossModalRetrieval\Image_Text")
-    parser.add_argument("--batch_size", type=int, default=64)
-    parser.add_argument("--test_batch_size", type=int, default=4)
+    parser.add_argument("--batch_size", type=int, default=128)
+    parser.add_argument("--test_batch_size", type=int, default=64)
     parser.add_argument("--num_workers", type=int, default=8)
     parser.add_argument("--test", dest='training', default=True, action='store_false')
 
