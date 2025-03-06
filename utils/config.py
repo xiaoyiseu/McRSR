@@ -51,7 +51,6 @@ def get_args():
     ######################## dataset ########################
     parser.add_argument("--dataset_name", default="RSTPReid", 
                         help="[CUHK-PEDES, ICFG-PEDES, RSTPReid, Flickr_30k, MSCOCO]")
-    parser.add_argument("--sampler", default="random", help="choose sampler from [idtentity, random]")
     parser.add_argument("--num_instance", type=int, default=4)
     parser.add_argument("--root_dir", default= r"F:\DataSet\CrossModalRetrieval\Image_Text")
     parser.add_argument("--batch_size", type=int, default=64)
