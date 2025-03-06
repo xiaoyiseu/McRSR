@@ -91,36 +91,12 @@ def build_dataloader(args, length = 500, tranforms=None):
                                  train_transforms,
                                  text_length=args.text_length)
 
-        if args.sampler == 'identity':
-            if args.distributed:
-                logger.info('using ddp random identity sampler')
-                logger.info('DISTRIBUTED TRAIN START')
-                mini_batch_size = args.batch_size // get_world_size()
-                # TODO wait to fix bugs
-                data_sampler = RandomIdentitySampler_DDP(dataset.train, args.batch_size, args.num_instance)
-                batch_sampler = torch.utils.data.sampler.BatchSampler(data_sampler, mini_batch_size, True)
-            else:
-                logger.info(
-                    f'using random identity sampler: batch_size: {args.batch_size}, id: {args.batch_size // args.num_instance}, instance: {args.num_instance}'
-                )
-                train_loader = DataLoader(train_set,
-                                          batch_size=args.batch_size,
-                                          sampler=RandomIdentitySampler(
-                                              dataset.train, args.batch_size,
-                                              args.num_instance),
-                                          num_workers=num_workers,
-                                          collate_fn=collate)
-        elif args.sampler == 'random':
-            # TODO add distributed condition
-            logger.info('using random sampler')
-            train_loader = DataLoader(train_set,
-                                      batch_size=args.batch_size,
-                                      shuffle=True,
-                                      num_workers=num_workers,
-                                      collate_fn=collate)
-        else:
-            logger.error('unsupported sampler! expected softmax or triplet but got {}'.format(args.sampler))
-
+        train_loader = DataLoader(train_set,
+                                  batch_size=args.batch_size,
+                                  shuffle=True,
+                                  num_workers=num_workers,
+                                  collate_fn=collate)
+      
         # **********************************************   validation
         ds = dataset.val if args.val_dataset == 'val' else dataset.test
         val_img_set = ImageDataset(ds['image_pids'], ds['img_paths'],
