@@ -1,6 +1,5 @@
 import argparse
 
-
 def get_args():
     parser = argparse.ArgumentParser(description="McRSA Args")
     ######################## general settings ########################
