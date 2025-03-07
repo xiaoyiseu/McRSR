@@ -40,8 +40,8 @@ python test.py
 [best model](https://pan.baidu.com/s/1WgmcoeT1IKh7NtmbsQGuFA?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   |  mINP  |
 |:----:| ----:|----:|----:|----:|----:|
-| t2i  | 58.152 | 76.391 | 82.598 | 32.487 | 5.183 |
-| i2t  | 62.757 | 83.303 | 89.153 | 31.357 | 3.161 |
+| t2i  | 59.769 | 77.131 | 82.981 | 33.289 | 4.813 |
+| i2t  | 62.288 | 82.855 | 88.387 | 31.453 | 3.036 |
 
 4.[Flickr 30K](https://ieeexplore.ieee.org/document/7298932/?arnumber=7298932) /
 [best model](https://pan.baidu.com/s/1gqI3ILimj8FFTrVESKPLVw?pwd=1234 )
