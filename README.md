@@ -29,10 +29,10 @@ python test.py
 ```
 ### pre-trained model
 RSTPReid: [best](https://pan.baidu.com/s/1i1kj6CaDaA-UMeg2WHFLhA?pwd=1234 )\
-CUHK-PEDES: [best]
-ICFG-PEDES: [best]
-Flickr30K: [best]
-MSCOCO: [best]
+CUHK-PEDES: [best]()\
+ICFG-PEDES: [best]()\
+Flickr30K: [best]()\
+MSCOCO: [best]()
 
 # Results on five public datasets
 
