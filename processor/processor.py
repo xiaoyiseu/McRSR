@@ -14,6 +14,10 @@ def dynamic_scaling(loss_dict, epsilon=1e-8):
 
 def TrainModule(start_epoch, args, model, train_loader, evaluator, optimizer, scheduler, checkpointer):
     device, logger = "cuda", logging.getLogger("McRSA.train")
+    arguments = {}
+    arguments["num_epoch"] = args.num_epoch
+    arguments["iteration"] = 0
+
     logger.info('start training')
     tb_writer, best_top1, patience, patience_counter = SummaryWriter(log_dir=args.output_dir), 0.0, 5, 0
     stages, current_stage = args.loss_names.split('+'), 1
@@ -70,7 +74,8 @@ def TrainModule(start_epoch, args, model, train_loader, evaluator, optimizer, sc
             torch.cuda.empty_cache()
             if best_top1 < top1:
                 best_top1, patience_counter = top1, 0
-                checkpointer.save("best", epoch=epoch)
+                arguments["epoch"] = epoch
+                checkpointer.save("best", **arguments)
             else:
                 patience_counter += 1
 
@@ -83,8 +88,8 @@ def TrainModule(start_epoch, args, model, train_loader, evaluator, optimizer, sc
                 else:
                     logger.info("All stages converged. Stopping training.")
                     break
-    if all(stage_converged.values()):
-        logger.info("Training stopped. All stages converged.")
+    if get_rank() == 0:
+        logger.info(f"best R1: {best_top1} at epoch {arguments['epoch']}")
 
 def InferenceModule(model, test_img_loader, test_txt_loader):
     logger = logging.getLogger("McRSA.test")
