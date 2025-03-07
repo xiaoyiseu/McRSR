@@ -19,7 +19,7 @@ device = 'cuda' if torch.cuda.is_available()  else 'cpu'
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="McRSA Test")
     dataset_dir = r''# dataset path
-    root_dir = r'' #root path
+    root_dir = r'' # pretrained mpdel path
 
     pretrain_set = 'RSTPReid' # [CUHK-PEDES, ICFG-PEDES, RSTPReid, Flickr_30k, MSCOCO]
     premodel = os.path.join(root_dir, pretrain_set)
