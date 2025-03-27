@@ -57,8 +57,3 @@ python test.py
 | t2i  | 49.004 | 76.831 | 85.581 | 61.451 | 61.451 |
 | i2t  | 59.640 | 85.680 | 92.340 | 49.949 | 28.558 | 
 
-## Citation
-If this work is helpful for your research, please cite our work:
-```
-
-```
