@@ -47,8 +47,8 @@ python test.py
 [best model](https://pan.baidu.com/s/1gqI3ILimj8FFTrVESKPLVw?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   |
 |:----:| ----:|----:|----:|----:|
-| t2i  | 61.969 | 79.522 | 85.102 | 70.355 | 
-| i2t  | 73.356 | 88.172 | 92.450 | 61.627 | 
+| t2i  | 77.140 | 94.280 | 96.800 | 84.641 | 
+| i2t  | 87.700 | 97.600 | 98.700 | 97.311 | 
 
 5.[MSCOCO (5K)](http://link.springer.com/10.1007/978-3-319-10602-1_48) /
 [best model](https://pan.baidu.com/s/1uxTHlVl-Ham2iOboCU9JPg?pwd=1234 )
