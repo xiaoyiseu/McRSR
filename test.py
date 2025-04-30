@@ -40,7 +40,6 @@ if __name__ == '__main__':
     args.output_dir = os.path.join(root_dir, test_path)
     args.training = False
     logger = setup_logger('McRSA', save_dir=args.output_dir, if_train=args.training)
-    logger.info(args)
     
     test_img_loader, test_txt_loader, num_classes = build_dataloader(args)
     
