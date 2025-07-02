@@ -23,35 +23,35 @@ python test.py
 
 # Results on five public datasets
 1.[RSTPReid](https://github.com/NjtechCVLab/RSTPReid-Dataset) /
-[best model](https://pan.baidu.com/s/1i1kj6CaDaA-UMeg2WHFLhA?pwd=1234 )
+[pre-trained model](https://pan.baidu.com/s/1i1kj6CaDaA-UMeg2WHFLhA?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   |  
 |:----:| ----:|----:|----:|----:|
 | t2i  | 58.650 | 80.200 | 87.700 | 45.558 | 
 | i2t  | 63.900 | 85.100 | 91.800 | 43.019 | 
 
 2.[CUHK-PEDES](https://github.com/ShuangLI59/Person-Search-with-Natural-Language-Description) /
-[best model](https://pan.baidu.com/s/1vVYIGgIaMvtrZTCR2Grolg?pwd=1234 )
+[pre-trained model](https://pan.baidu.com/s/1vVYIGgIaMvtrZTCR2Grolg?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   | 
 |:----:| ----:|----:|----:|----:|
 | t2i  | 69.136 | 86.875 | 92.138 | 60.279 | 
 | i2t  | 79.440 | 95.381 | 97.690 | 55.707 | 
 
 3.[ICFG-PEDES](https://github.com/zifyloo/SSAN) /
-[best model](https://pan.baidu.com/s/1WgmcoeT1IKh7NtmbsQGuFA?pwd=1234 )
+[pre-trained model](https://pan.baidu.com/s/1WgmcoeT1IKh7NtmbsQGuFA?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   | 
 |:----:| ----:|----:|----:|----:|
 | t2i  | 59.769 | 77.131 | 82.981 | 33.289 |
 | i2t  | 62.288 | 82.855 | 88.387 | 31.453 | 
 
 4.[Flickr 30K](https://ieeexplore.ieee.org/document/7298932/?arnumber=7298932) /
-[best model](https://pan.baidu.com/s/1gqI3ILimj8FFTrVESKPLVw?pwd=1234 )
+[pre-trained model](https://pan.baidu.com/s/1gqI3ILimj8FFTrVESKPLVw?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   |
 |:----:| ----:|----:|----:|----:|
 | t2i  | 77.140 | 94.280 | 96.800 | 84.641 | 
 | i2t  | 87.700 | 97.600 | 98.700 | 97.311 | 
 
 5.[MSCOCO (5K)](http://link.springer.com/10.1007/978-3-319-10602-1_48) /
-[best model](https://pan.baidu.com/s/1uxTHlVl-Ham2iOboCU9JPg?pwd=1234 )
+[pre-trained model](https://pan.baidu.com/s/1uxTHlVl-Ham2iOboCU9JPg?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   |  
 |:----:| ----:|----:|----:|----:|
 | t2i  | 49.004 | 76.831 | 85.581 | 61.451 | 
