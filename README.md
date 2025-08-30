@@ -21,7 +21,7 @@ python train.py
 python test.py
 ```
 
-# Results on five public datasets
+## Results on five public datasets
 1.[RSTPReid](https://github.com/NjtechCVLab/RSTPReid-Dataset) /
 [pre-trained model](https://pan.baidu.com/s/1i1kj6CaDaA-UMeg2WHFLhA?pwd=1234 )
 | task |   R1   |   R5   |  R10   |  mAP   |  
@@ -55,5 +55,12 @@ python test.py
 | task |   R1   |   R5   |  R10   |  mAP   |  
 |:----:| ----:|----:|----:|----:|
 | t2i  | 49.004 | 76.831 | 85.581 | 61.451 | 
-| i2t  | 59.640 | 85.680 | 92.340 | 49.949 | 
+| i2t  | 59.640 | 85.680 | 92.340 | 49.949 |   /
+
+## Acknowledgments
+Some components of this code implementation are adopted from [CLIP](https://github.com/openai/CLIP) and [IRRA](https://github.com/anosorae/IRRA). 
+We sincerely appreciate for their contributions.
+
+
+
 
