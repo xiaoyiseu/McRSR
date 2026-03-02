@@ -1,5 +1,5 @@
 # Multi-Constraint Relational Semantic Alignment Towards Image-Text Retrieval
-We provide the code for reproducing result of our paper “Multi-Constraint Relational Semantic Alignment Towards Image-Text Retrieval”.
+We provide the code for reproducing result of our paper “Multi-Constraint Relational Semantic Alignment Towards Image-Text Retrieval ([paper](https://ieeexplore.ieee.org/abstract/document/11408098))”.
 
 
 ## Requirements
